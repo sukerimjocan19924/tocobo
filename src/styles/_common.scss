@@ -14,3 +14,25 @@ footer {
         height: 100%;
     }
 }
+
+
+
+.app-container {
+    &.up {
+        .TopBanner {
+            top: -110%
+        }
+
+        header {
+            top: 0
+        }
+    }
+
+    &.scrolled {
+        header {
+            background: #ffffff;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 24%, rgba(255, 255, 255, 0) 100%);
+        }
+    }
+
+}
