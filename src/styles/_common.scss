@@ -2,6 +2,69 @@
     padding: 6rem 0;
     position: relative;
     z-index: 0;
+
+    &#hero {
+        padding: 0;
+        margin-top: 4rem;
+        transition: margin-top .3s;
+    }
+
+    h2.tit {
+        font-size: 7.3rem;
+        font-weight: 200;
+    }
+
+    p.txt {
+        font-size: 1.6rem;
+
+    }
+
+    a.btn {
+        display: inline-block;
+        margin-top: 3rem;
+        // padding: 1.7rem 6.8rem;
+        font-size: 1.6rem;
+        text-align: center;
+        width: 27rem;
+        height: 5rem;
+        align-content: center;
+        color: var(--bg);
+        background-color: var(--primary);
+        border-radius: 6rem;
+        position: relative;
+        border: .1rem solid transparent;
+        transition: all .8s;
+        overflow: hidden;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            border-radius: 6rem;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: var(--primary);
+            left: 0;
+            top: 0;
+            z-index: 0;
+            transition: all .5s;
+        }
+
+        &:hover {
+            color: var(--primary);
+
+            &::after {
+                opacity: 1;
+                // width: 100%;
+                background-color: var(--bg);
+                z-index: -1;
+            }
+        }
+    }
+
+
 }
 
 .section,
@@ -17,6 +80,8 @@ footer {
 
 
 
+
+
 .app-container {
     &.up {
         .TopBanner {
@@ -25,6 +90,10 @@ footer {
 
         header {
             top: 0
+        }
+
+        #hero {
+            margin-top: 0;
         }
     }
 
