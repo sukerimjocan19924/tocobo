@@ -66,9 +66,9 @@ button {
 }
 
 section {
-    min-height: 100vh;
+    // min-height: 100vh;
     &:nth-child(odd){
-        background-color: rgb(255, 235, 218);
+        // background-color: rgb(255, 235, 218);
     }
 }
 
@@ -84,4 +84,16 @@ a {
 }
 img {
     max-width: 100%;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    height: 3px;
+}
+::-webkit-scrollbar-track{
+    background-color: #e7e7e7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary);
+    border-radius: 50px;
 }
