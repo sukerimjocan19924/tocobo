@@ -10,6 +10,9 @@ import SkinCare from './sections/SkinCare'
 import Instargram from './sections/Instargram'
 import TopBanner from './components/TopBanner'
 import FixedTopBtn from './components/FixedTopBtn'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
 
   const [topBanner, setTopBanner]=useState('')
@@ -31,33 +34,40 @@ function App() {
 
   },[])
 
+  useEffect(() => {
+    AOS.init({
+      duration: 400,
+      easing: 'ease'
+    })
+  }, [])
+
   const upTopBanner =()=>{
     setTopBanner('up')
   }
   return (
-    <div className={`app-container ${topBanner} ${isScrolled? 'scrolled':''} `}>
-      <FixedTopBtn/>
-      <TopBanner  onClick={upTopBanner}/>
-      <Header />
-      <main>
-        <section id="hero" className='section'>
-          <Hero />
-        </section>
-        <section id="follow" className='section'>
-          <Follow />
-        </section>
-        <section id="collection" className='section'>
-          <Collection />
-        </section>
-        <section id="skincare" className='section'>
-          <SkinCare />
-        </section>
-        <section id="instargram" className='section'>
-          <Instargram />
-        </section>
-      </main>
-      <Footer />
-    </div>
+      <div className={`app-container ${topBanner} ${isScrolled? 'scrolled':''} `}>
+        <FixedTopBtn/>
+        <TopBanner  onClick={upTopBanner}/>
+        <Header />
+        <main>
+          <section id="hero" className='section'>
+            <Hero />
+          </section>
+          <section id="follow" className='section'>
+            <Follow />
+          </section>
+          <section id="collection" className='section'>
+            <Collection />
+          </section>
+          <section id="skincare" className='section'>
+            <SkinCare />
+          </section>
+          <section id="instargram" className='section'>
+            <Instargram />
+          </section>
+        </main>
+        <Footer/>
+      </div>
   )
 }
 

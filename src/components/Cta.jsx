@@ -3,11 +3,15 @@ import { categories } from '../util/cta'
 import './styles/Cta.scss'
 
 const Cta = () => {
+  const stagger = (base, idx, step=100) => base+idx*step
+
   return (
     <div className='inner cta-inner'>
       <ul className="cta-list">
-        {categories.map((c) => (
-          <li key={c.id}>
+        {categories.map((c, i) => (
+          <li key={c.id}
+              data-aos="fade-up"
+              data-aos-delay={stagger(1000, i, 100)}>
             <a href={c.href}>
               <div className="img-wrap" style={{ backgroundImage: `url(${c.img.src})` }}>
 
