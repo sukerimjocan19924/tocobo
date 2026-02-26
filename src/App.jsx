@@ -24,6 +24,7 @@ function App() {
       setIsScrolled(scrollTop>200)
 
       // console.log(scrollTop)
+
     }
 
     window.addEventListener('scroll',handleScroll)

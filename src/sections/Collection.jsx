@@ -5,6 +5,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
 import './styles/Collection.scss'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
 const Collection = () => {
 
   const prevRef = useRef(null)
@@ -24,6 +27,11 @@ const Collection = () => {
       swiperRef.current.navigation.init()
       swiperRef.current.navigation.update()
     }
+
+     AOS.init({
+    duration: 1000, // 애니메이션 지속 시간 (ms)
+    once: false,     // 스크롤할 때 한 번만 실행할지 여부
+    })
 
   }, [])
 
