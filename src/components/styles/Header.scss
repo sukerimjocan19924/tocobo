@@ -58,12 +58,12 @@ header{
             display: flex;
             gap: 1.2rem;
 
-            @media screen and (max-width: 1111px) {
-                li {
-                    display: none;
-                }
-                li:last-child {
-                    display: flex;
+            li {
+
+                @media screen and (max-width: 1111px) {
+                    &:not(:last-child) {
+                        display: none;
+                    }
                 }
             }
         }
