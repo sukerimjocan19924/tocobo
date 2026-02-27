@@ -11,6 +11,13 @@ header{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        .mob-nav-btn {
+            display: none;
+
+            @media screen and (max-width: 1111px) {
+                display: block;
+            }
+        }
 
         .nav-list{
             display: flex;
@@ -36,6 +43,10 @@ header{
                     width: 100%;
                 }
             }
+
+            @media screen and (max-width: 1111px) {
+                display: none;
+            }
         }
         h1.tit {
             position: absolute;
@@ -46,6 +57,15 @@ header{
         .util-list{
             display: flex;
             gap: 1.2rem;
+
+            @media screen and (max-width: 1111px) {
+                li {
+                    display: none;
+                }
+                li:last-child {
+                    display: flex;
+                }
+            }
         }
     }
 }

@@ -45,6 +45,9 @@
 
             img {
                 width: 110%;
+                height: 110%;
+                animation: up 2s infinite;
+                // alternate;
             }
         }
 
