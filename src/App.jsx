@@ -23,6 +23,16 @@ function App() {
   const handleMNavOpen = () => setMNaOpen(true)
   const handleMNavClose = () => setMNaOpen(false)
 
+  useEffect(() => {
+      AOS.init({
+        duration: 400,
+        easing: 'ease'
+      })
+  }, [])
+
+  useEffect(()=>{
+    document.body.style.overflow=mNavOpen?'hidden':''
+  }, [mNavOpen])
 
   useEffect(()=>{
 
@@ -38,13 +48,6 @@ function App() {
     window.addEventListener('scroll',handleScroll)
 
   },[])
-
-  useEffect(() => {
-    AOS.init({
-      duration: 400,
-      easing: 'ease'
-    })
-  }, [])
 
   const upTopBanner =()=>{
     setTopBanner('up')

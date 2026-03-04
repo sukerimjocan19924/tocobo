@@ -25,7 +25,7 @@ const Header = ({mNavOpen, onNavOpen, onNavClose}) => {
         </h1>
         <Util />
       </div>
-      {mNavOpen && <Mnav/>}
+      {mNavOpen && <Mnav onNavClose={onNavClose}/>}
     </header>
   )
 }

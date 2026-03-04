@@ -6,6 +6,10 @@ header{
     height: 10.5rem;
     transition: all .3s;
 
+    @media screen and (max-width:1111px) {
+        height: 6.3rem;
+    }
+
     .inner {
         max-width: 160rem;
         display: flex;
@@ -29,6 +33,7 @@ header{
                 color:var(--primary);
                 padding: 0 .5rem;
                 position: relative;
+
                 &::after{
                     display: block;
                     position: absolute;
@@ -39,6 +44,7 @@ header{
                     left: 0;
                     transition: width .3s ease;
                 }
+
                 &:hover::after{
                     width: 100%;
                 }
@@ -48,12 +54,18 @@ header{
                 display: none;
             }
         }
+
         h1.tit {
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%,-50%);
+
+            @media screen and (max-width: 1111px) {
+                width: 12.4rem;
+            }
         }
+        
         .util-list{
             display: flex;
             gap: 1.2rem;
@@ -61,6 +73,28 @@ header{
             li {
 
                 @media screen and (max-width: 1111px) {
+                    a {
+                        display: block;
+                        width: 2.5rem;
+                        position: relative;
+                        transform: translateX(-1rem);
+
+                        &::after {
+                            display: block;
+                            content: "0";
+                            width: 2rem;
+                            height: 2rem;
+                            background-color: var(--primary);
+                            text-align: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            color: var(--bg);
+                            position: absolute;
+                            right: -2rem;
+                            top: 0;
+                        }
+                    }
+
                     &:not(:last-child) {
                         display: none;
                     }
