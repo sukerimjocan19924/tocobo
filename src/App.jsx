@@ -1,5 +1,4 @@
-
-import { useState ,useEffect} from 'react'
+import { useState, useEffect} from 'react'
 import './styles/main.scss'
 import Header from './components/Header'
 import Hero from './sections/Hero'
@@ -18,10 +17,10 @@ function App() {
   const [topBanner, setTopBanner]=useState('')
   const [isScrolled, setIsScrolled]=useState(false)
   
-  const [mNavOpen, setMNaOpen] = useState(false)
+  const [mNavOpen, setMNavOpen] = useState(false)
 
-  const handleMNavOpen = () => setMNaOpen(true)
-  const handleMNavClose = () => setMNaOpen(false)
+  const handleMNavOpen = () => setMNavOpen(true)
+  const handleMNavClose = () => setMNavOpen(false)
 
   useEffect(() => {
       AOS.init({

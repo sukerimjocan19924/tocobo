@@ -1,109 +1,26 @@
-header {
-    position: fixed;
-    top: 4rem;
-    width: 100%;
-    z-index: 5;
-    height: 10.5rem;
-    transition: all .3s;
+.hello-inner {
+    display: flex;
+    padding-top: 12rem;
+    align-items: center;
 
     @media screen and (max-width:1111px) {
-        height: 6.3rem;
+        flex-direction: column;
+        gap: 6rem;
+        padding-top: 6rem;
     }
 
-    .inner {
-        max-width: 160rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .img-wrap {
+        border-radius: 2rem;
+        overflow: hidden;
+    }
 
-        .mob-nav-btn {
-            display: none;
+    .t-wrap {
+        text-align: center;
+        width: 63rem;
 
-            @media screen and (max-width:1111px) {
-
-                display: block;
-            }
-        }
-
-        .nav-list {
-            display: flex;
-            gap: 2rem;
-
-            a {
-                display: block;
-                font-size: 1.8rem;
-                text-transform: capitalize;
-                color: var(--primary);
-                padding: 0 .5rem;
-                position: relative;
-
-                &::after {
-                    display: block;
-                    position: absolute;
-                    width: 0%;
-                    height: .1rem;
-                    background-color: var(--primary);
-                    content: "";
-                    left: 0;
-                    transition: width .3s ease;
-                }
-
-                &:hover::after {
-                    width: 100%;
-                }
-            }
-
-
-            @media screen and (max-width:1111px) {
-                display: none;
-
-            }
-        }
-
-        h1.tit {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-
-            @media screen and (max-width:1111px) {
-                width: 12.4rem;
-            }
-        }
-
-        .util-list {
-            display: flex;
-            gap: 1.2rem;
-
-            li {
-
-                @media screen and (max-width:1111px) {
-                    a{
-                        display: block;
-                        width: 2.5rem;
-                        position: relative;
-                        transform: translateX(-1rem);
-                        &::after{
-                            display: block;
-                            content:"0";
-                            width: 2rem;
-                            height: 2rem;
-                            background-color: var(--primary);
-                            text-align: center;
-                            align-content: center;
-                            border-radius: 50%;
-                            color: var(--bg);
-                            position: absolute;
-                            right: -2rem;
-                            top:0
-                        }
-                    }
-
-                    &:not(:last-child) {
-                        display: none;
-                    }
-                }
-            }
+        h2.tit {
+            color: var(--primary);
+            margin: 3rem 0 2rem;
         }
     }
 }
