@@ -10,13 +10,27 @@
 
     .instar-list{
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         margin-top: 4rem;
+
         li{
             flex:1;
+
+            @media screen and (max-width:1111px) {
+                flex: 0 0 calc(33.333% - 1rem);
+
+                a {
+                    height: 345px;
+                    width: 244px;
+                }
+            }
+
             a{
                 display: block;
-                height: 21rem;
+                height: auto;
+                width: 100%;
+                aspect-ratio: 198 / 230;
                 background-size: cover;
                 background-position: center;
             }
