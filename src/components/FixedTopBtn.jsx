@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/FixedTopBtn.scss'
 import { useSmoothScroll } from '../hooks/useSmoothScroll'
+
 const FixedTopBtn = () => {
     const scrollTo = useSmoothScroll()
     return (

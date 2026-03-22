@@ -1,5 +1,4 @@
-
-import { useState ,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import './styles/main.scss'
 import Header from './components/Header'
 import Hero from './sections/Hero'
@@ -14,71 +13,65 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function App() {
+  const [topBanner, setTopBanner] = useState('')
+  const [isScrolled, setIsScrolled] = useState(false)
 
-  const [topBanner, setTopBanner]=useState('')
-  const [isScrolled, setIsScrolled]=useState(false)
-  
-  const [mNavOpen, setMNaOpen] = useState(false)
+  const [mNavOpen, setMNavOpen] = useState(false)
 
-  const handleMNavOpen = () => setMNaOpen(true)
-  const handleMNavClose = () => setMNaOpen(false)
+  const handleMNavOpen = () => setMNavOpen(true)
+  const handleMNavClose = () => setMNavOpen(false)
 
   useEffect(() => {
-      AOS.init({
-        duration: 400,
-        easing: 'ease'
-      })
+    AOS.init({
+      duration: 400,
+      easing: 'ease'
+    });
   }, [])
 
   useEffect(()=>{
     document.body.style.overflow=mNavOpen?'hidden':''
-  }, [mNavOpen])
+  },[mNavOpen])
 
-  useEffect(()=>{
-
-    const handleScroll =()=>{
-      const scrollTop=window.scrollY
-
-      setIsScrolled(scrollTop>200)
-
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 200)
       // console.log(scrollTop)
-
     }
+    window.addEventListener('scroll', handleScroll)
+  }, [])
 
-    window.addEventListener('scroll',handleScroll)
-
-  },[])
-
-  const upTopBanner =()=>{
+  const upTopBanner = () => {
     setTopBanner('up')
   }
+
   return (
-      <div className={`app-container ${topBanner} ${isScrolled? 'scrolled':''} `}>
-        <FixedTopBtn/>
-        <TopBanner  onClick={upTopBanner}/>
-        <Header
-          mNavOpen={mNavOpen}
-          onNavOpen={handleMNavOpen}
-          onNavClose={handleMNavClose}/>
-        <main>
-          <section id="hero" className='section'>
-            <Hero />
-          </section>
-          <section id="follow" className='section'>
-            <Follow />
-          </section>
-          <section id="collection" className='section'>
-            <Collection />
-          </section>
-          <section id="skincare" className='section'>
-            <SkinCare />
-          </section>
-          <section id="instargram" className='section'>
-            <Instargram />
-          </section>
-        </main>
-        <Footer/>
-      </div>
+    <div className={`app-container ${topBanner} ${isScrolled ? 'scrolled' : ''} `}>
+      <FixedTopBtn />
+      <TopBanner onClick={upTopBanner} />
+      <Header
+        mNavOpen={mNavOpen}
+        onNavOpen={handleMNavOpen}
+        onNavClose={handleMNavClose} />
+      <main>
+        <section id="hero" className='section'>
+          <Hero />
+        </section>
+        <section id="follow" className='section'>
+          <Follow />
+        </section>
+        <section id="collection" className='section'>
+          <Collection />
+        </section>
+        <section id="skincare" className='section'>
+          <SkinCare />
+        </section>
+        <section id="instargram" className='section'>
+          <Instargram />
+        </section>
+      </main>
+      <Footer />
+    </div>
   )
 }
 

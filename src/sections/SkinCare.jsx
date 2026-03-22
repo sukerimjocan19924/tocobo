@@ -3,6 +3,7 @@ import skincare from '../util/skincare'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import './styles/SkinCare.scss'
+
 const SkinCare = () => {
   return (
     <div className='inner skincare-inner'>

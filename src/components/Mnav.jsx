@@ -15,11 +15,11 @@ const Mnav = ({ onNavClose }) => {
         <a href="#" className='m-close-btn' onClick={(e) => {
           e.preventDefault()
           onNavClose()
-          }}>
+        }}>
           <img src="/img/icon_search_close.png" alt="icon" />
         </a>
       </div>
-      
+
       <ul className="m-nav-list">
         {navLink.map((nav, i) => (
           <li key={i}>
@@ -35,7 +35,7 @@ const Mnav = ({ onNavClose }) => {
           </li>
         ))}
       </ul>
-
+      
       <ul className="btm-list">
         <li><a href="#">로그인</a></li>
         <li><a href="#">회원가입</a></li>

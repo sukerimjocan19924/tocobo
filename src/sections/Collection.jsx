@@ -5,17 +5,13 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
 import './styles/Collection.scss'
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 
 const Collection = () => {
-
   const prevRef = useRef(null)
   const nextRef = useRef(null)
   const swiperRef = useRef(null)
 
   useEffect(() => {
-
     if (swiperRef.current &&
       swiperRef.current.params &&
       prevRef.current &&
@@ -27,17 +23,10 @@ const Collection = () => {
       swiperRef.current.navigation.init()
       swiperRef.current.navigation.update()
     }
-
-     AOS.init({
-    duration: 1000, // 애니메이션 지속 시간 (ms)
-    once: false,     // 스크롤할 때 한 번만 실행할지 여부
-    })
-
   }, [])
 
   return (
     <div className='inner collection-inner'>
-
       <div className="t-wrap">
         <h2 className="tit">
           TOCOBO COLLECTION
@@ -57,7 +46,7 @@ const Collection = () => {
         modules={[Pagination, Navigation]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         className="collection-slider"
-      >
+        >
         {collectionData.map((sl, i) => (
           <SwiperSlide key={i}>
             <a href="#">
@@ -88,7 +77,6 @@ const Collection = () => {
       onClick={(e)=>e.preventDefault()} 
       className='next' 
       ref={nextRef}>next</a>
-
     </div>
   )
 }
